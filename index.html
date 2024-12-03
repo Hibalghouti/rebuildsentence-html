@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebuild Sentence</title>
+</head>
+<body>
+    <script>
+        function rebuildSentence(words, lengths) {
+            let reconstructedWords = [];
+            
+            lengths.forEach(length => {
+                let word = words.shift(); // Take the first word from the list
+                reconstructedWords.push(word.slice(0, length)); // Take the first 'length' characters of the word
+            });
+
+            // Join the reconstructed words with a space and return
+            return reconstructedWords.join(' ');
+        }
+
+        // Example usage
+        console.log(rebuildSentence(["the", "sky", "is", "blue"], [3, 2, 2, 1]));
+    </script>
+</body>
+</html>
